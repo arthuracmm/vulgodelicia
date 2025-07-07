@@ -38,7 +38,7 @@ export default function Header() {
             </div>
 
             {alterarEndereco && (
-                <div className="flex fixed top-0 left-0 right-0 bottom-0 bg-red-100/80 p-4 gap-2 items-center justify-center">
+                <div className="flex fixed top-0 left-0 right-0 bottom-0 bg-red-100/80 p-4 gap-2 items-center justify-center z-10">
                     <div className="flex flex-col w-full h-full bg-white rounded-xl p-4 gap-2 relative justify-center items-center">
                         <button className="bg-red-500 text-white rounded-full py-2 px-2 text-sm cursor-pointer absolute top-4 right-4" onClick={() => setAlterarEndereco(false)}>
                             <X className="text-white" size={20} />
