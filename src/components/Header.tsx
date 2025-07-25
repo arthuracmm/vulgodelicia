@@ -22,9 +22,9 @@ export default function Header() {
     return (
         <header className="flex flex-col text-white w-full">
             <div className="flex justify-between bg-red-100 p-4">
-                <div className="flex">
+                <a className="flex" href="/">
                     <img src={Icon} alt="Icon" className="w-10" />
-                </div>
+                </a>
                 <div className="flex gap-2 items-center text-right cursor-pointer" onClick={() => setAlterarEndereco(!alterarEndereco)}>
                     <div className="flex flex-col">
                         <p className="text-red-300 text-sm">Enviar para</p>

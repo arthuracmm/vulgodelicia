@@ -7,7 +7,7 @@ import FooterItems from "../components/FooterItems";
 
 export default function Home() {
   return (
-    <div className="flex font-montserrat flex-col items-center justify-center w-full">
+    <div className="flex font-montserrat flex-col items-center justify-center w-full mb-20">
       <Header />
       <Search />
       <div className="flex flex-col w-full">

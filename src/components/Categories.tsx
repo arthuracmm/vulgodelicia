@@ -25,7 +25,7 @@ export default function Categories() {
                 <h1 className="text-lg font-bold text-red-500">Categorias</h1>
                 <div className="flex flex-row gap-2 w-full">
                     {categories.map((category, idx) => (
-                        <a key={idx} href={`/categoria/${category.pathname}`} className={`cursor-pointer text-center px-4 py-2 flex flex-shrink-0 flex-col items-center overflow-hidden justify-center rounded-xl ${pathname === `/${category.pathname}` ? 'bg-red-500 text-white' : 'border-1 border-zinc-400'}`} >
+                        <a key={idx} href={`/categoria/${category.pathname}`} className={`cursor-pointer text-center px-4 py-2 flex flex-shrink-0 flex-col items-center overflow-hidden justify-center rounded-xl bg-red-500 text-white hover:bg:red-800`} >
                             <p>{category.name}</p>
                         </a>
                     ))}
