@@ -3,6 +3,7 @@ import Categories from "../components/Categories";
 import BestSelling from "../components/BestSelling";
 import Search from "../components/Search";
 import Banner from "../components/Banner";
+import FooterItems from "../components/FooterItems";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Categories />
         <BestSelling />
       </div>
+      <FooterItems />
     </div>
   )
 }
