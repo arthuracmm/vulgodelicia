@@ -2,51 +2,51 @@
         "items": [
                 {
                         "id": 1,
-                        "name": "Bolo de morango",
+                        "name": "Bolo Tradicional P",
                         "category": "Bolos",
-                        "price": "R$ 11,00",
-                        "image": "./src/assets/items/mv-sdm1.jpg",
-                        "description": "Bolo de morango bem sulucento e recheado"
+                        "price": "R$ 60,00",
+                        "image": "./src/assets/items/tradicional.jpg",
+                        "description": "Bolo Tradicional P com 500g de peso total"
                 },
                 {
                         "id": 2,
-                        "name": "Bolo de morango 2",
+                        "name": "Bolo Tradicional M",
                         "category": "Bolos",
-                        "price": "R$ 12,00",
-                        "image": "./src/assets/items/mv-sdm1.jpg",
-                        "description": "Bolo de morango bem sulucento e recheado"
+                        "price": "R$ 100,00",
+                        "image": "./src/assets/items/tradicional.jpg",
+                        "description": "Bolo Tradicional bem sulucento e recheado"
                 },
                 {
                         "id": 3,
-                        "name": "Bolo de morango 3",
+                        "name": "Bolo Tradicional G",
                         "category": "Bolos",
-                        "price": "R$ 13,00",
-                        "image": "./src/assets/items/mv-sdm1.jpg",
-                        "description": "Bolo de morango bem sulucento e recheado"
+                        "price": "R$ 150,00",
+                        "image": "./src/assets/items/tradicional.jpg",
+                        "description": "Bolo Tradicional bem sulucento e recheado"
                 },
                 {
                         "id": 4,
-                        "name": "Bolo de morango 4",
+                        "name": "Bolo Tradicional GG",
                         "category": "Bolos",
-                        "price": "R$ 14,00",
-                        "image": "./src/assets/items/mv-sdm1.jpg",
-                        "description": "Bolo de morango bem sulucento e recheado"
+                        "price": "R$ 190,00",
+                        "image": "./src/assets/items/tradicional.jpg",
+                        "description": "Bolo Tradicional bem sulucento e recheado"
                 },
-                {
-                        "id": 5,
-                        "name": "Bolo de morango dasdsadsdasd",
-                        "category": "Bolos",
-                        "price": "R$ 15,00",
-                        "image": "./src/assets/items/mv-sdm1.jpg",
-                        "description": "Bolo de morango bem sulucento e recheado"
-                },
+
+
+
+
+
+
+
+
                 {
                         "id": 6,
-                        "name": "Bolo de morango",
-                        "category": "Bolos",
+                        "name": "Mini Vulcão",
+                        "category": "Mini Vulcao",
                         "price": "R$ 16,00",
-                        "image": "./src/assets/items/mv-sdm1.jpg",
-                        "description": "Bolo de morango bem sulucento e recheado"
+                        "image": "./src/assets/items/minivulcao.jpg",
+                        "description": "Mini Vulcão com sabor de frutas e doces"
                 }
         ]
 }

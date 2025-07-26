@@ -13,7 +13,7 @@ export default function BestSelling() {
                 <img src="./src/assets/items/mv-sdm1.jpg" alt="Item" className="w-full aspect-video object-cover rounded-t-xl overflow-hidden " />
                 <div className="flex justify-between items-center gap-1 bg-white rounded-xl p-2 translate-y-[-10px] pt-[10px]">
                     <div className="flex flex-col">
-                        <p className="text-sm font-bold">Surpresa De Morango</p>
+                        <p className="text-sm font-bold">Mini Vulcão - Surpresa De Morango</p>
                         <div className="flex flex-col  text-zinc-500">
                             <div className="flex gap-1">
                                 <Clock size={15} />
