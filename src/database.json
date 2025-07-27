@@ -2,35 +2,35 @@
         "items": [
                 {
                         "id": 1,
-                        "name": "Bolo Tradicional P",
+                        "name": "Bolo Tradicional PP",
                         "category": "Bolos",
-                        "price": "R$ 60,00",
+                        "price": 60.00,
                         "image": "./src/assets/items/tradicional.jpg",
-                        "description": "Bolo Tradicional P com 500g de peso total"
+                        "description": "Bolo Tradicional PP com 500g rendendo cerca de 4 a 5 fatias, cada fatia com 100 a 120g"
                 },
                 {
                         "id": 2,
-                        "name": "Bolo Tradicional M",
+                        "name": "Bolo Tradicional P",
                         "category": "Bolos",
-                        "price": "R$ 100,00",
+                        "price": 100.00,
                         "image": "./src/assets/items/tradicional.jpg",
-                        "description": "Bolo Tradicional bem sulucento e recheado"
+                        "description": "Bolo Tradicional P com 1kg rendendo cerca de 4 a 5 fatias, cada fatia com 100 a 120g"
                 },
                 {
                         "id": 3,
-                        "name": "Bolo Tradicional G",
+                        "name": "Bolo Tradicional M",
                         "category": "Bolos",
-                        "price": "R$ 150,00",
+                        "price": 150.00,
                         "image": "./src/assets/items/tradicional.jpg",
-                        "description": "Bolo Tradicional bem sulucento e recheado"
+                        "description": "Bolo Tradicional M com 2kg rendendo cerca de 4 a 5 fatias, cada fatia com 100 a 120g"
                 },
                 {
                         "id": 4,
-                        "name": "Bolo Tradicional GG",
+                        "name": "Bolo Tradicional G",
                         "category": "Bolos",
-                        "price": "R$ 190,00",
+                        "price": 190.00,
                         "image": "./src/assets/items/tradicional.jpg",
-                        "description": "Bolo Tradicional bem sulucento e recheado"
+                       "description": "Bolo Tradicional G com 3.8kg rendendo cerca de 4 a 5 fatias, cada fatia com 100 a 120g"
                 },
 
 

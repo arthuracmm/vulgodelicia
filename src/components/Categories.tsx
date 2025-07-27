@@ -1,5 +1,3 @@
-import { useLocation } from "react-router-dom";
-
 export default function Categories() {
 
     const categories = [
@@ -16,8 +14,6 @@ export default function Categories() {
             pathname: 'doces'
         }
     ]
-
-    const pathname = useLocation().pathname;
 
     return (
         <div className="w-full flex flex-col gap-2 ">

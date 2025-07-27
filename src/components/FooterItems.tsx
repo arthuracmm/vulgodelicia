@@ -23,11 +23,11 @@ export default function FooterItems() {
                     {verifyPath("/search") && <div className="absolute bottom-1 bg-white py-[2px] px-2 rounded-full" />}
                 </Link>
 
-                <Link to="/cart" className={`flex items-center justify-center py-3 px-5 rounded-full relative ${verifyPath("/cart") ? "bg-red-500" : ""}`}>
-                    {verifyPath("/cart") ?
+                <Link to="/carrinho" className={`flex items-center justify-center py-3 px-5 rounded-full relative ${verifyPath("/carrinho") ? "bg-red-500" : ""}`}>
+                    {verifyPath("/carrinho") ?
                         <ShoppingCartIcon size={24} className="text-white" /> : <ShoppingCartIcon size={24} />
                     }
-                    {verifyPath("/cart") && <div className="absolute bottom-1 bg-white py-[2px] px-2 rounded-full" />}
+                    {verifyPath("/carrinho") && <div className="absolute bottom-1 bg-white py-[2px] px-2 rounded-full" />}
                 </Link>
             </div>
 
