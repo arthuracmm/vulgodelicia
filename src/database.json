@@ -5,7 +5,7 @@
                         "name": "Bolo Tradicional PP",
                         "category": "Bolos",
                         "price": 60.00,
-                        "image": "./src/assets/items/tradicional.jpg",
+                        "image": "./src/assets/items/tradicionalm.jpg",
                         "description": "Bolo Tradicional PP com 500g rendendo cerca de 4 a 5 fatias, cada fatia com 100 a 120g"
                 },
                 {
@@ -13,7 +13,7 @@
                         "name": "Bolo Tradicional P",
                         "category": "Bolos",
                         "price": 100.00,
-                        "image": "./src/assets/items/tradicional.jpg",
+                        "image": "./src/assets/items/tradicionalm.jpg",
                         "description": "Bolo Tradicional P com 1kg rendendo cerca de 4 a 5 fatias, cada fatia com 100 a 120g"
                 },
                 {
@@ -21,7 +21,7 @@
                         "name": "Bolo Tradicional M",
                         "category": "Bolos",
                         "price": 150.00,
-                        "image": "./src/assets/items/tradicional.jpg",
+                        "image": "./src/assets/items/tradicionalm.jpg",
                         "description": "Bolo Tradicional M com 2kg rendendo cerca de 4 a 5 fatias, cada fatia com 100 a 120g"
                 },
                 {
@@ -29,22 +29,14 @@
                         "name": "Bolo Tradicional G",
                         "category": "Bolos",
                         "price": 190.00,
-                        "image": "./src/assets/items/tradicional.jpg",
-                       "description": "Bolo Tradicional G com 3.8kg rendendo cerca de 4 a 5 fatias, cada fatia com 100 a 120g"
+                        "image": "./src/assets/items/tradicionalg.jpg",
+                        "description": "Bolo Tradicional G com 3.8kg rendendo cerca de 4 a 5 fatias, cada fatia com 100 a 120g"
                 },
-
-
-
-
-
-
-
-
                 {
-                        "id": 6,
+                        "id": 5,
                         "name": "Mini Vulcão",
-                        "category": "Mini Vulcao",
-                        "price": "R$ 16,00",
+                        "category": "mini vulcao",
+                        "price": 16.00,
                         "image": "./src/assets/items/minivulcao.jpg",
                         "description": "Mini Vulcão com sabor de frutas e doces"
                 }

@@ -1,25 +1,29 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header";
-import Search from "../components/Search";
 import FooterItems from "../components/FooterItems";
 import databaseData from "../database.json";
+import { ChevronLeft } from "lucide-react";
 
 export default function CategoriaPage() {
     const { nome } = useParams();
     const categoria = nome?.toLowerCase().replace(/-/g, ' ');
+
     const data = databaseData.items.filter(
-        (item) => item.category.toLowerCase() === categoria
+        (item) => item.category.toLowerCase().replace(/-/g, ' ') === categoria
     );
 
-    const removeHyphen = nome ? nome.replace(/-/g, ' ') : '';
+    const navigate = useNavigate();
+
 
     return (
         <div className="flex font-montserrat flex-col items-center justify-center w-full mb-20">
             <Header />
             <div className="flex flex-col w-full">
-                <h1 className="text-2xl capitalize font-bold text-white w-full text-center bg-red-500 py-2">
-                    {removeHyphen}
-                </h1>
+                <div className="text-2xl capitalize font-bold text-white w-full text-center bg-red-500 py-2 flex items-center justify-between gap-2">
+                    <ChevronLeft className="ml-2 cursor-pointer hover:bg-white/30 rounded-sm" onClick={() => navigate(-1)} />
+                    {categoria}
+                    <p> </p>
+                </div>
                 <div className="grid grid-cols-3 gap-1">
                     {data.length > 0 ? (
                         data.map((item: any) => (
