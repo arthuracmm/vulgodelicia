@@ -12,7 +12,7 @@ type CartItem = {
 type CartContextType = {
   cart: CartItem[];
   addToCart: (item: CartItem) => void;
-  removeFromCart: (id: string) => void;
+  removeFromCartByIndex: (index: number) => void;
   clearCart: () => void;
 };
 
@@ -30,6 +30,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     return stored ? JSON.parse(stored) : [];
   });
 
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -38,16 +39,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setCart((prev) => [...prev, item]);
   }
 
-  const removeFromCart = (id: string) => {
-    setCart(cart.filter(item => item.id !== Number(id)));
-  };
+
+  function removeFromCartByIndex(index: number) {
+    setCart((prevCart) => prevCart.filter((_, i) => i !== index));
+  }
 
   function clearCart() {
     setCart([]);
   }
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCartByIndex, clearCart }}>
       {children}
     </CartContext.Provider>
   );

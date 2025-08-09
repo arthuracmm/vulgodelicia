@@ -9,7 +9,7 @@ import NumberAndName from "../components/NumberAndName";
 import { useState } from "react";
 
 export default function Cart() {
-    const { cart, clearCart, removeFromCart } = useCart();
+    const { cart, clearCart, removeFromCartByIndex } = useCart();
     const navigate = useNavigate();
     const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
@@ -113,7 +113,7 @@ export default function Cart() {
 
                                 <img src={`/${item.image}`} alt={item.name} className="w-32 h-32 object-cover rounded" />
 
-                                <Trash onClick={() => removeFromCart(String(item.id))} size={15} className="absolute top-4 right-4 bg-red-500 text-white p-2 box-content rounded-full cursor-pointer" />
+                                <Trash onClick={() => removeFromCartByIndex(idx)} size={15} className="absolute top-4 right-4 bg-red-500 text-white p-2 box-content rounded-full cursor-pointer" />
                             </div>
 
                         ))

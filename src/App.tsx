@@ -4,6 +4,7 @@ import Item from "./pages/Item";
 import CategoriaPage from "./pages/CategoriaPage";
 import Cart from "./pages/Cart";
 import { CartProvider } from "./contexts/CartContext";
+import Search from "./pages/Search";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
         <Routes>
           <Route path="/item/:id" element={<Item />} />
           <Route path="/categoria/:nome" element={<CategoriaPage />} />
+          <Route path="/pesquisa/:nome" element={<Search/>} />
+          <Route path="/pesquisa/" element={<Search/>} />
           <Route path="/carrinho" element={<Cart />} />
           <Route path="*" element={<Home />} />
         </Routes>

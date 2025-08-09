@@ -36,7 +36,7 @@ export default function CategoriaPage() {
                             </Link>
                         ))
                     ) : (
-                        <p className="text-center col-span-3 text-gray-500">Nenhum item encontrado para esta categoria.</p>
+                        <p className="text-center col-span-3 text-gray-500 mt-2">Nenhum item encontrado para esta categoria.</p>
                     )}
                 </div>
             </div>

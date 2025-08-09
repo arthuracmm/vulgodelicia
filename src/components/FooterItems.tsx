@@ -16,11 +16,11 @@ export default function FooterItems() {
                     {verifyPath("/") && <div className="absolute bottom-1 bg-white py-[2px] px-2 rounded-full" />}
                 </Link>
 
-                <Link to="/search" className={`flex items-center justify-center py-3 px-5 rounded-full relative ${verifyPath("/search") ? "bg-red-500" : ""}`}>
-                    {verifyPath("/search") ?
+                <Link to="/pesquisa/" className={`flex items-center justify-center py-3 px-5 rounded-full relative ${verifyPath("/pesquisa/") ? "bg-red-500" : ""}`}>
+                    {verifyPath("/pesquisa/") ?
                         <SearchIcon size={24} className="text-white" /> : <SearchIcon size={24} />
                     }
-                    {verifyPath("/search") && <div className="absolute bottom-1 bg-white py-[2px] px-2 rounded-full" />}
+                    {verifyPath("/pesquisa/") && <div className="absolute bottom-1 bg-white py-[2px] px-2 rounded-full" />}
                 </Link>
 
                 <Link to="/carrinho" className={`flex items-center justify-center py-3 px-5 rounded-full relative ${verifyPath("/carrinho") ? "bg-red-500" : ""}`}>

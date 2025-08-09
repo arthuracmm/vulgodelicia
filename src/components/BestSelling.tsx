@@ -1,8 +1,9 @@
-import { Bike, Clock, Plus, Star } from "lucide-react";
+import { Banknote, Clock, Plus, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function BestSelling() {
     return (
-        <div className="flex flex-col overflow-x-auto whitespace-nowrap w-full py-2 px-1 scrollbar-hide pl-2">
+        <Link to={'/item/5'} className="flex flex-col overflow-x-auto whitespace-nowrap w-full py-2 px-1 scrollbar-hide pl-2">
             <h1 className="text-lg font-bold text-red-500">Item mais Vendido</h1>
             <div className="flex flex-col mt-1 shadow-sm rounded-xl cursor-pointer relative">
                 <div className="flex gap-1 p-2 bg-white rounded-full absolute top-2 left-2">
@@ -20,16 +21,16 @@ export default function BestSelling() {
                                 <p className="text-xs">20 min</p>
                             </div>
                             <div className="flex gap-1">
-                                <Bike size={15} />
-                                <p className="text-xs">R$ 15,00</p>
+                                <Banknote size={15} />
+                                <p className="text-xs">R$ 25,00</p>
                             </div>
                         </div>
                     </div>
-                    <button className="flex gap-1 bg-red-500 text-white rounded-lg p-2 w-10 h-10 items-center justify-center">
+                    <button className="flex gap-1 bg-red-500 text-white rounded-lg p-2 w-10 h-10 items-center justify-center cursor-pointer">
                         <Plus size={20} />
                     </button>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

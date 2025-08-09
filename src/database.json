@@ -14,7 +14,7 @@
                         "category": "Bolos",
                         "price": 100.00,
                         "image": "./src/assets/items/tradicionalm.jpg",
-                        "description": "Bolo Tradicional P com 1kg rendendo cerca de 4 a 5 fatias, cada fatia com 100 a 120g"
+                        "description": "Bolo Tradicional P com 1kg rendendo cerca de 8 a 10 fatias, cada fatia com 100 a 120g"
                 },
                 {
                         "id": 3,
@@ -22,7 +22,7 @@
                         "category": "Bolos",
                         "price": 150.00,
                         "image": "./src/assets/items/tradicionalm.jpg",
-                        "description": "Bolo Tradicional M com 2kg rendendo cerca de 4 a 5 fatias, cada fatia com 100 a 120g"
+                        "description": "Bolo Tradicional M com 2kg rendendo cerca de 16 a 20 fatias, cada fatia com 100 a 120g"
                 },
                 {
                         "id": 4,
@@ -30,7 +30,7 @@
                         "category": "Bolos",
                         "price": 190.00,
                         "image": "./src/assets/items/tradicionalg.jpg",
-                        "description": "Bolo Tradicional G com 3.8kg rendendo cerca de 4 a 5 fatias, cada fatia com 100 a 120g"
+                        "description": "Bolo Tradicional G com 3.8kg rendendo cerca de 28 a 35 fatias, cada fatia com 100 a 120g"
                 },
                 {
                         "id": 5,
@@ -39,6 +39,14 @@
                         "price": 20.00,
                         "image": "./src/assets/items/minivulcao.jpg",
                         "description": "Mini Vulcão com sabor de frutas e doces"
+                },
+                {
+                        "id": 6,
+                        "name": "Bombom de Morango",
+                        "category": "doces",
+                        "price": 15.00,
+                        "image": "./src/assets/items/minivulcao.jpg",
+                        "description": "Bombom de Morango recheado com brigadeiro branco e morango"
                 }
         ]
 }
