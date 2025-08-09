@@ -35,8 +35,8 @@ export default function Cart() {
         cart.forEach(item => {
             mensagem += `\n• ${item.name}`;
             if (item.options) {
-                Object.entries(item.options).forEach(([k, v]) => {
-                    mensagem += ` (${v})`;
+                Object.entries(item.options).forEach(([_, v]) => {
+                    mensagem += `\n   (${v})`;
                 });
             }
             if (item.observation) {
@@ -87,9 +87,22 @@ export default function Cart() {
                                     <h2 className="font-semibold">{item.name}</h2>
                                     {item.options && (
                                         <div>
-                                            {Object.entries(item.options).map(([_, value]) => (
-                                                <p className="text-sm">- {value}</p>
-                                            ))}
+                                            {Object.entries(item.options)
+                                                .filter(([key]) => !key.endsWith('Price')) // Exibe só as opções, não os preços
+                                                .map(([key, value]) => {
+                                                    const priceKey = `${key}Price`;
+                                                    const extraPrice = Number(item.options?.[priceKey] ?? 0);
+                                                    return (
+                                                        <p className="text-sm" key={key}>
+                                                            - {value}
+                                                            {extraPrice > 0 && (
+                                                                <>
+                                                                    <span className="text-xs text-green-500 ml-1 font-semibold">+R${extraPrice.toFixed(2)}</span>
+                                                                </>
+                                                            )}
+                                                        </p>
+                                                    );
+                                                })}
                                         </div>
                                     )}
                                     {item.observation && (

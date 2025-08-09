@@ -36,7 +36,7 @@
                         "id": 5,
                         "name": "Mini Vulcão",
                         "category": "mini vulcao",
-                        "price": 16.00,
+                        "price": 20.00,
                         "image": "./src/assets/items/minivulcao.jpg",
                         "description": "Mini Vulcão com sabor de frutas e doces"
                 }

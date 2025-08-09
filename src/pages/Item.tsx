@@ -6,6 +6,7 @@ import { ChevronLeft, MessageSquareMore } from "lucide-react";
 import BolosSelect from "../components/BolosSelect";
 import { useCart } from "../contexts/CartContext";
 import { useState } from "react";
+import MinivVulcaoSelect from "../components/MiniVulcaoSelect";
 
 export default function Item() {
     const { id } = useParams();
@@ -17,8 +18,8 @@ export default function Item() {
     const navigate = useNavigate();
     const { addToCart } = useCart();
 
-    // Adicione estados para opções e observação
     const [observacao, setObservacao] = useState("");
+
     const [boloOptions, setBoloOptions] = useState<{
         massa?: string;
         massaPrice?: number;
@@ -28,10 +29,31 @@ export default function Item() {
         topoPrice?: number;
     }>({});
 
-    const massaExtra = boloOptions.massaPrice ?? 0;
-    const saborExtra = boloOptions.saborPrice ?? 0;
+    const [miniVulcaoOptions, setMiniVulcaoOptions] = useState<{
+        massa?: string;
+        massaPrice?: number;
+        sabor?: string;
+        saborPrice?: number;
+    }>({});
+
+    const massaExtra = (boloOptions.massaPrice ?? 0) || (miniVulcaoOptions.massaPrice ?? 0);
+    const saborExtra = (boloOptions.saborPrice ?? 0) || (miniVulcaoOptions.saborPrice ?? 0);
     const topoExtra = boloOptions.topoPrice ?? 0;
     const totalPrice = item ? Number(item.price) + massaExtra + saborExtra + topoExtra : 0;
+
+    // Função para verificar se todas as opções obrigatórias estão preenchidas
+    function areOptionsFilled(categoria: string | undefined, options: any) {
+        if (!categoria) return true;
+        switch (categoria.toLowerCase()) {
+            case "bolos":
+                return options.massa && options.sabor && options.topo;
+            case "mini vulcao":
+                return options.massa && options.sabor;
+            // Adicione mais categorias e suas regras aqui
+            default:
+                return true; // Se não houver opções obrigatórias
+        }
+    }
 
     if (!item) {
         return (
@@ -55,17 +77,15 @@ export default function Item() {
                 <h1 className="text-lg font-semibold ml-2 mt-2">{item.name}</h1>
                 <p className="text-xs text-gray-800 ml-2">{item.description}</p>
                 <p className="text-md font-semibold mt-1 ml-2">
-                    {categoria === 'Bolos' ? `R$ ${totalPrice.toFixed(2)}` : item.price}
+                    {`R$ ${item.price.toFixed(2)}`}
                 </p>
 
                 {categoria === 'Bolos' && (
                     <BolosSelect options={boloOptions} setOptions={setBoloOptions} />
                 )}
 
-                {categoria === 'Doces' && (
-                    <div className="flex">
-                        <p>b</p>
-                    </div>
+                {categoria === 'mini vulcao' && (
+                    <MinivVulcaoSelect options={miniVulcaoOptions} setOptions={setMiniVulcaoOptions} />
                 )}
 
                 {categoria === 'Salgados' && (
@@ -103,22 +123,43 @@ export default function Item() {
                 <button
                     className="bg-red-500 text-white px-4 py-2 rounded-full mt-4 cursor-pointer"
                     onClick={() => {
-                        if (!boloOptions.massa || !boloOptions.sabor || !boloOptions.topo) {
-                            alert("Por favor, selecione todas as opções obrigatórias do bolo.");
+                        let options;
+                        if (categoria?.toLowerCase() === "bolos") {
+                            options = boloOptions;
+                        } else if (categoria?.toLowerCase() === "mini vulcao") {
+                            options = miniVulcaoOptions;
+                        } else {
+                            options = {};
+                        }
+
+                        if (!areOptionsFilled(categoria, options)) {
+                            alert("Por favor, selecione todas as opções obrigatórias.");
                             return;
                         }
+
                         addToCart({
                             id: item.id,
                             name: item.name,
-                            price: categoria === 'Bolos' ? totalPrice : Number(item.price),
+                            price: totalPrice,
                             image: item.image,
-                            options: categoria === 'Bolos'
-                                ? {
-                                    ...(boloOptions.massa && { massa: String(boloOptions.massa) }),
-                                    ...(boloOptions.sabor && { sabor: String(boloOptions.sabor) }),
-                                    ...(boloOptions.topo && { topo: String(boloOptions.topo) })
-                                }
-                                : undefined,
+                            options:
+                                categoria === 'Bolos'
+                                    ? {
+                                        ...(boloOptions.massa && { massa: String(boloOptions.massa) }),
+                                        ...(boloOptions.massaPrice !== undefined && { massaPrice: String(boloOptions.massaPrice) }),
+                                        ...(boloOptions.sabor && { sabor: String(boloOptions.sabor) }),
+                                        ...(boloOptions.saborPrice !== undefined && { saborPrice: String(boloOptions.saborPrice) }),
+                                        ...(boloOptions.topo && { topo: String(boloOptions.topo) }),
+                                        ...(boloOptions.topoPrice !== undefined && { topoPrice: String(boloOptions.topoPrice) }),
+                                    }
+                                    : categoria === 'mini vulcao'
+                                        ? {
+                                            ...(miniVulcaoOptions.massa && { massa: String(miniVulcaoOptions.massa) }),
+                                            ...(miniVulcaoOptions.massaPrice !== undefined && { massaPrice: String(miniVulcaoOptions.massaPrice) }),
+                                            ...(miniVulcaoOptions.sabor && { sabor: String(miniVulcaoOptions.sabor) }),
+                                            ...(miniVulcaoOptions.saborPrice !== undefined && { saborPrice: String(miniVulcaoOptions.saborPrice) }),
+                                        }
+                                        : undefined,
                             observation: observacao
                         });
                         navigate("/carrinho");

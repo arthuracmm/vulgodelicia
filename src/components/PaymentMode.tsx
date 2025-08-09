@@ -1,4 +1,4 @@
-import { Banknote, CreditCard, Pencil, Store, X } from "lucide-react";
+import { Banknote, CreditCard, Pencil, X } from "lucide-react";
 import { useState } from "react";
 import Pix from "../../src/assets/pixicon.png";
 
