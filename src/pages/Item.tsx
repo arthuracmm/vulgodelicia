@@ -67,12 +67,12 @@ export default function Item() {
     return (
         <div className="flex font-montserrat flex-col items-center justify-center w-full mb-20">
             <Header />
-            <div className="flex flex-col w-full relative">
+            <div className="flex flex-col w-full lg:w-1/2 relative">
                 <button onClick={() => navigate(-1)} className="text-white bg-red-500 w-fit p-2 rounded-full absolute top-2 left-2 cursor-pointer">
                     <ChevronLeft />
                 </button>
 
-                <img src={`/${item.image}`} alt={item.name} className="w-full h-96 object-cover rounded-lg shadow-md" />
+                <img src={`/${item.image}`} alt={item.name} className="w-full h-96 lg:h-150 object-cover rounded-lg shadow-md" />
 
                 <h1 className="text-lg font-semibold ml-2 mt-2">{item.name}</h1>
                 <p className="text-xs text-gray-800 ml-2">{item.description}</p>

@@ -18,13 +18,13 @@ export default function CategoriaPage() {
     return (
         <div className="flex font-montserrat flex-col items-center justify-center w-full mb-20">
             <Header />
-            <div className="flex flex-col w-full">
+            <div className="flex flex-col w-full ">
                 <div className="text-2xl capitalize font-bold text-white w-full text-center bg-red-500 py-2 flex items-center justify-between gap-2">
                     <ChevronLeft className="ml-2 cursor-pointer hover:bg-white/30 rounded-sm" onClick={() => navigate(-1)} />
                     {categoria}
                     <p> </p>
                 </div>
-                <div className="grid grid-cols-3 gap-1">
+                <div className="grid grid-cols-3 gap-1 lg:w-1/2  mx-auto">
                     {data.length > 0 ? (
                         data.map((item: any) => (
                             <Link to={`/item/${item.id}`} key={item.id} className="flex flex-col items-center justify-center bg-white rounded-lg p-1 gap-1">

@@ -9,7 +9,7 @@ export default function Header() {
                     <img src={Icon} alt="Icon" className="w-10" />
                 </a>
                 <a className="flex" href="/">
-                    <img src={TextIcon} alt="Icon" className="w-40 h-fit"/>
+                   
                 </a>
             </div>
 

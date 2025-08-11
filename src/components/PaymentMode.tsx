@@ -53,7 +53,7 @@ export default function PaymentMode({ paymentModeSelected, setPaymentMode }: { p
                 ) : (
                     <p>Selecione um método de pagamento</p>
                 )}
-            </div><div className={`flex flex-col fixed top-3 right-0 w-full h-full bg-white z-10 py-12 ${PaymentModeSelect ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-100'} transition-transform duration-300`}>
+            </div><div className={`flex flex-col fixed top-0 right-0 w-full h-full bg-white z-10 py-12 ${PaymentModeSelect ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-100'} transition-transform duration-300`}>
                 <button onClick={() => setPaymentModeSelect(false)} className="text-white bg-red-500 w-fit p-2 rounded-full cursor-pointer absolute left-2 top-2">
                     <X />
                 </button>

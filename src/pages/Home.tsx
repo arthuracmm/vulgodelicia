@@ -7,10 +7,10 @@ import InputSearch from "../components/InputSearch";
 
 export default function Home() {
   return (
-    <div className="flex font-montserrat flex-col items-center justify-center w-full mb-20">
+    <div className="flex font-montserrat flex-col items-center justify-center w-full mb-20 mx-auto">
       <Header />
       <InputSearch />
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full items-center justify-center lg:w-1/2">
         <Banner />
         <Categories />
         <BestSelling />

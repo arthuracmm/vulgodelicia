@@ -10,8 +10,8 @@ export default function Search() {
     const { nome } = useParams();
     const pesquisa = nome?.toLowerCase().replace(/-/g, ' ');
 
-    const [itemsOrdered, setItemsOrdered] = useState(true);
-    const [valueOrdered, setValueOrdered] = useState('desc');
+    const [orderBy, setOrderBy] = useState<'nome' | 'valor'>('nome');
+    const [orderDirection, setOrderDirection] = useState<'asc' | 'desc'>('asc');
 
     const normalizeText = (text: string) =>
         text
@@ -28,12 +28,12 @@ export default function Search() {
     );
 
     const sortedData = filteredData.sort((a, b) => {
-        if (valueOrdered) {
-            return valueOrdered === 'asc'
+        if (orderBy === 'valor') {
+            return orderDirection === 'asc'
                 ? a.price - b.price
                 : b.price - a.price;
         } else {
-            return itemsOrdered
+            return orderDirection === 'asc'
                 ? a.name.localeCompare(b.name)
                 : b.name.localeCompare(a.name);
         }
@@ -44,28 +44,32 @@ export default function Search() {
     return (
         <div className="flex font-montserrat flex-col items-center justify-center w-full mb-20">
             <Header />
-            <div className="flex flex-col w-full">
-                <InputSearch inputSearchValue={pesquisa ?? ''} />
+            <InputSearch inputSearchValue={pesquisa ?? ''} />
+            <div className="flex flex-col w-full lg:w-1/2">
                 <div className="flex flex-col w-full p-2">
                     {data.length > 0 ? (
                         <div className="flex-col w-full">
                             <div className="flex w-full justify-between items-center mb-2">
-                                <button className="flex text-sm cursor-pointer items-center gap-1 text-gray-600 hover:text-red-500 transition-colors" onClick={() => setItemsOrdered(!itemsOrdered)}>
+                                <button
+                                    className="flex text-sm cursor-pointer items-center gap-1 text-gray-600 hover:text-red-500 transition-colors"
+                                    onClick={() => {
+                                        setOrderBy('nome');
+                                        setOrderDirection(orderDirection === 'asc' ? 'desc' : 'asc');
+                                    }}
+                                >
                                     Ordenar
-                                    {itemsOrdered ? (
-                                        <ChevronUp className="rotate-180" />
-                                    ) : (
-                                        <ChevronUp />
-                                    )}
+                                    <ChevronUp className={orderDirection === 'asc' && orderBy === 'nome' ? "rotate-180" : ""} />
                                 </button>
 
-                                <button className="flex text-sm cursor-pointer items-center gap-1 text-gray-600 hover:text-red-500 transition-colors" onClick={() => setValueOrdered(valueOrdered === 'asc' ? 'desc' : 'asc')}>
+                                <button
+                                    className="flex text-sm cursor-pointer items-center gap-1 text-gray-600 hover:text-red-500 transition-colors"
+                                    onClick={() => {
+                                        setOrderBy('valor');
+                                        setOrderDirection(orderDirection === 'asc' ? 'desc' : 'asc');
+                                    }}
+                                >
                                     Preço
-                                    {valueOrdered === 'asc' ? (
-                                        <CircleDollarSign className="text-green-500" />
-                                    ) : (
-                                        <CircleDollarSign />
-                                    )}
+                                    <CircleDollarSign className={orderBy === 'valor' && orderDirection === 'asc'? "text-green-500" : ""} />
                                 </button>
 
                             </div>

@@ -24,7 +24,7 @@ export default function Cart() {
     );
 
     // Checagem de campos obrigatórios
-    const allFilled = deliveryMode && paymentMode && name && number;
+    const allFilled = deliveryMode && paymentMode && name && number.length == 11;
 
     // Função para montar mensagem do pedido
     function montarMensagemPedido() {
@@ -35,7 +35,9 @@ export default function Cart() {
         cart.forEach(item => {
             mensagem += `\n• ${item.name}`;
             if (item.options) {
-                Object.entries(item.options).forEach(([_, v]) => {
+                Object.entries(item.options)
+                .filter(([key]) => !key.endsWith('Price'))
+                .forEach(([_, v]) => {
                     mensagem += `\n   (${v})`;
                 });
             }
@@ -66,9 +68,9 @@ export default function Cart() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center w-full mb-20">
+        <div className="flex font-montserrat flex-col items-center justify-center w-full mb-20">
             <Header />
-            <div className="flex flex-col w-full relative">
+            <div className="flex flex-col w-full lg:w-1/2 relative">
                 <div className="flex w-full items-center justify-between p-2">
                     <button onClick={() => navigate(-1)} className="text-white bg-red-500 w-fit p-2 rounded-full cursor-pointer">
                         <ChevronLeft />
@@ -121,7 +123,7 @@ export default function Cart() {
                 </div>
             </div>
             {cart.length > 0 && (
-                <div className="flex flex-col w-full items-center p-4 gap-4">
+                <div className="flex flex-col w-full lg:w-1/2 items-center p-4 gap-4">
                     <div className="flex flex-col w-full">
                         <a href="/" className="border border-red-500 p-3 text-center text-red-500 w-full rounded-md hover:bg-red-100/50 transition-colors">
                             Adicionar mais itens
@@ -149,7 +151,7 @@ export default function Cart() {
                     />
 
                     <button
-                        className={`bg-red-500 p-3 text-center text-white w-full rounded-md hover:bg-red-600 cursor-pointer transition-colors mt-4 ${!allFilled ? "opacity-50 cursor-not-allowed" : ""}`}
+                        className={`bg-red-500 p-3 text-center text-white w-full rounded-md  transition-colors mt-4 ${!allFilled ? "opacity-50 cursor-not-allowed" : "hover:bg-red-600 cursor-pointer"}`}
                         disabled={!allFilled}
                         onClick={finalizarPedido}
                     >
